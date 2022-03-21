@@ -1,0 +1,11 @@
+version: "3.10.3"
+services:
+  db:
+    image: bitnami/postgresql
+    ports:
+      - "${DB_PORT}:5432"
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+      - POSTGRES_USER=${DB_USERNAME}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_DATABASE}
